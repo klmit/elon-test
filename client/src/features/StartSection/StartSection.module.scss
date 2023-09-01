@@ -1,0 +1,65 @@
+@use "styles/style" as *;
+
+@mixin gradient {
+    background: linear-gradient(90deg, rgba(252,252,252,1) 42%, rgba(204,78,32,1) 62%, rgba(206,87,43,1) 78%, rgba(185,94,33,1) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 250px;
+}
+
+
+.titleMain {
+    font-size: 70px;
+    margin: 0;
+    font-weight: bolder;
+    text-transform: uppercase;
+    @include gradient()
+}
+
+.titleDesc {
+    margin: 0;
+    font-weight: 400;
+    font-size: 28px;
+    color: $color-white;
+    @include gradient()
+
+}
+
+.corner {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    color: $color-white;
+    transition: all .5s;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.rightBlock {
+    width: 400px;
+}
+
+@media screen and (max-width: 1310px) {
+    
+    .section {
+        width: 90%;
+        display: block;
+        margin: 100px auto;
+    }
+
+    .rightBlock {  margin-top: 100px;}
+}
