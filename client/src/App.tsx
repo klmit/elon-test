@@ -1,26 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+//
+import { TestPage } from "pages";
+import { HomePage } from "pages";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [isDev, setIsDev] = React.useState<boolean>(true);
+
+  return <div className="App">{isDev ? <TestPage /> : <HomePage />}</div>;
 }
 
 export default App;
