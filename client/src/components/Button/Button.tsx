@@ -6,10 +6,11 @@ import s from "./Button.module.scss";
 
 type Props = {
   className?: string;
-  text: string;
-  withIcon: string;
+  text?: string;
+  withIcon?: string;
   onClick: () => void;
   type: "button" | "submit" | "reset";
+  style?: any;
 };
 
 export const Button: React.FC<Props> = ({
@@ -18,9 +19,15 @@ export const Button: React.FC<Props> = ({
   withIcon,
   text,
   onClick,
+  style,
 }) => {
   return (
-    <button className={cn(className)} type={type} onClick={onClick}>
+    <button
+      style={style}
+      className={cn(s.btn, className)}
+      type={type}
+      onClick={onClick}
+    >
       {text} {withIcon}
     </button>
   );
