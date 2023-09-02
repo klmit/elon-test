@@ -1,0 +1,30 @@
+[
+    {
+        "model": "restapi.ratings",
+        "fields": {
+            "uniqueid": "top",
+            "value": "1"
+        }
+    },
+    {
+        "model": "restapi.ratings",
+        "fields": {
+            "uniqueid": "years",
+             "value": "2001"
+        }
+    },
+    {
+        "model": "restapi.ratings",
+        "fields": {
+            "uniqueid": "grant",
+            "value": "50%"
+        }
+    },
+    {
+        "model": "restapi.ratings",
+        "fields": {
+            "uniqueid": "travel",
+            "value": "597"
+        }
+    }
+]

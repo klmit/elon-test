@@ -20,7 +20,7 @@ export const Mirror: React.FC<Props> = ({ first, second, value }) => {
   };
 
   const onCloseInput = (e: React.KeyboardEvent<HTMLInputElement>): void => {
-    if (e.key == "Enter") setShowInput(false);
+    if (e.key === "Enter") setShowInput(false);
   };
 
   const onChangeInput = (e: ChangeEvent<HTMLInputElement>): void => {
