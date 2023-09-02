@@ -15,13 +15,17 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
   (response) => {
-    return response.data;
+    return response;
   },
   (error) => {
     return Promise.reject(error);
   }
 );
 
-export const apiRequest = async (url = "", method: string, data: any) => {
-  api({ url, method, data });
+export const apiRequest = async (
+  url = "",
+  method: string,
+  data: any = null
+) => {
+  return await api({ url, method, data });
 };

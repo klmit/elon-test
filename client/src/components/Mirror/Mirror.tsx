@@ -2,29 +2,41 @@ import React, { ChangeEvent } from "react";
 
 //
 import s from "./Mirror.module.scss";
+import { apiRequest } from "api/api";
 
 type Props = {
   first: string;
   value: string;
   second: string;
+  uniqueid: string;
 };
 
 const allowedTextLength = 5;
 
-export const Mirror: React.FC<Props> = ({ first, second, value }) => {
+export const Mirror: React.FC<Props> = ({ first, second, value, uniqueid }) => {
   const [stateValue, setStateValue] = React.useState<string>(value);
   const [showInput, setShowInput] = React.useState<boolean>(false);
+
+  const setData = async () => {
+    await apiRequest(
+      "/api/rating",
+      "PUT",
+      JSON.stringify({
+        uniqueid,
+        value: stateValue,
+      })
+    );
+  };
 
   const onOpenInput = (): void => {
     setShowInput(true);
   };
 
   const onCloseInput = (e: React.KeyboardEvent<HTMLInputElement>): void => {
-<<<<<<< HEAD
-    if (e.key === "Enter") setShowInput(false);
-=======
-    if (e.key === "Enter") setShowInput(false);
->>>>>>> origin/main
+    if (e.key === "Enter") {
+      setShowInput(false);
+      setData();
+    }
   };
 
   const onChangeInput = (e: ChangeEvent<HTMLInputElement>): void => {
