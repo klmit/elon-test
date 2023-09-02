@@ -1,0 +1,13 @@
+
+
+.home {
+    max-width: 73%;
+    margin: 0px auto;
+}
+
+  
+@media screen and (max-width: 1310px) {
+    .home {
+        width: auto; 
+    }
+}
