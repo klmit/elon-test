@@ -21,6 +21,7 @@ from restapi.views import *
 
 
 urlpatterns = [
+    path("", index, name="index"),
     path('admin/', admin.site.urls),
     path('api/rating', RatingValueView.as_view(), name="rating")
 ]

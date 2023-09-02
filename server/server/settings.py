@@ -46,8 +46,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'restapi'
+    'restapi',
+    'webpack_loader'
 ]
+
+
+WEBPACK_LOADER = {
+    "DEFAULT": {
+        "BUNDLE_DIR_NAME": "../../client/build",
+        "STATS_FILE": BASE_DIR / "webpack-stats.json"
+    }
+}
 
 
 REST_FRAMEWORK = {

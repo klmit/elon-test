@@ -3,7 +3,12 @@ from rest_framework.views import APIView, status
 from .models import Ratings
 from .serializer import RatingValuesSerializer
 from rest_framework.response import Response
+
 # Create your views here.
+
+
+def index(request):
+    return render(request, "../../client/build/index.html")
 
 
 class RatingValueView(APIView):
