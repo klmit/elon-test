@@ -53,7 +53,7 @@ INSTALLED_APPS = [
 
 WEBPACK_LOADER = {
     "DEFAULT": {
-        "BUNDLE_DIR_NAME": "../../client/build",
+        "BUNDLE_DIR_NAME": "build/",
         "STATS_FILE": BASE_DIR / "webpack-stats.json"
     }
 }
